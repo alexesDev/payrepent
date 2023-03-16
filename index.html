@@ -89,7 +89,7 @@
   репораций:
 </p>
 
-<div class="address">bc1qlawce97mpjfkxucy0cca8ts3fwufvd8wxx6jyl</div>
+<div id="address" class="address">bc1qlawce97mpjfkxucy0cca8ts3fwufvd8wxx6jyl</div>
 
 <h1 class="folk-title">Святые люди:</h1>
 
@@ -109,7 +109,15 @@
 <p>(c) Хохол стартап технолоджи</p>
 
 <script>
-  const address = 'bc1qlawce97mpjfkxucy0cca8ts3fwufvd8wxx6jyl';
+  let address = 'bc1qlawce97mpjfkxucy0cca8ts3fwufvd8wxx6jyl';
+
+  if (location.hash) {
+    address = location.hash.substr(1);
+  }
+
+console.log(address);
+  document.getElementById('address').innerText = address;
+
   const apiUrl = 'https://blockstream.info/api/address/' + address + '/txs';
 
   function json(r) {
