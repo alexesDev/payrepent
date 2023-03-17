@@ -114,7 +114,7 @@
 <p>(c) <a href="LICENSE.txt">Хохол стартап технолоджи</a></p>
 
 <script>
-  let address = 'bc1qlawce97mpjfkxucy0cca8ts3fwufvd8wxx6jyl';
+  var address = 'bc1qlawce97mpjfkxucy0cca8ts3fwufvd8wxx6jyl';
 
   if (location.hash) {
     address = location.hash.substr(1);
@@ -122,7 +122,7 @@
 
   document.getElementById('address').innerText = address;
 
-  const apiUrl = 'https://blockstream.info/api/address/' + address + '/txs';
+  var apiUrl = 'https://blockstream.info/api/address/' + address + '/txs';
 
   function json(r) {
     return r.json();
@@ -145,7 +145,7 @@
   }
 
   function prepareItem(data) {
-    const out = data.vout.find(function (i) {
+    var out = data.vout.find(function (i) {
       return i.scriptpubkey_address == address;
     });
 
@@ -163,14 +163,13 @@
     return true;
   }
 
-  const containerEl = document.getElementById('txs');
-  const template = containerEl.cloneNode(true);
+  var containerEl = document.getElementById('txs');
+  var template = containerEl.cloneNode(true);
   containerEl.innerHTML = '';
 
   function renderTxs(items) {
-    console.log(items[0]);
     items.reverse().forEach(function (item) {
-      const el = template.cloneNode(true);
+      var el = template.cloneNode(true);
 
       if (prepareItem(item)) {
         applyExtracts(el, item);
