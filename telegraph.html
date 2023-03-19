@@ -26,6 +26,10 @@
     text-decoration: underline;
   }
 
+  .content img {
+    max-width: 600px;
+  }
+
   .page-title {
     font-size: 28px;
     font-weight: bold;
@@ -292,7 +296,7 @@
   }
 </style>
 
-<h1 class="page-title">Центр сертификации &laquo;Плати &amp; Кайся&raquo;</h1>
+<h1 id="page-title" class="page-title">Центр сертификации &laquo;Плати &amp; Кайся&raquo;</h1>
 
 <div id="content" class="content">???</div>
 <div id="address" class="address">bc1qds685q2dknvhkpcj9dk5e0z930u4hrvzrjt8rs</div>
@@ -342,6 +346,7 @@
 
   var addressEl = document.getElementById('address');
   var contentEl = document.getElementById('content');
+  var titleEl = document.getElementById('page-title');
 
   [addressInput, contentUrlInput, resultInput].forEach(function (el) {
     el.addEventListener('click', function (e) {
@@ -360,7 +365,7 @@
   }
 
   function updateOriginal() {
-    const apiUrl = contentUrl.replace('telegra.ph/', 'api.telegra.ph/getPage/') + '?return_content=true';
+    var apiUrl = contentUrl.replace('telegra.ph/', 'api.telegra.ph/getPage/') + '?return_content=true';
 
     resultInput.value = genUrl(address, contentUrl);
     addressInput.value = address;
@@ -375,6 +380,7 @@
         if (!data.ok) {
           contentEl.innerText = 'Что-то пошло не так... ' + data.error;
         } else {
+          titleEl.innerText = data.result.title;
           contentEl.innerText = '';
           contentEl.appendChild(
             nodeToDom({
