@@ -364,7 +364,6 @@
       .then(json)
       .then(function(data) {
         if (!data.ok) {
-          console.log('data', data);
           contentEl.innerText = 'Что-то пошло не так... ' + data.error;
         } else {
           contentEl.innerText = '';
@@ -373,6 +372,10 @@
           }));
         }
       });
+
+    if (window.sa_pageview) {
+      window.sa_pageview(location.pathname + location.hash);
+    }
   }
 
   update();
@@ -383,7 +386,6 @@
   });
 
   contentUrlInput.addEventListener('blur', function (e) {
-    console.log('contentUrl input', e.target.value);
     contentUrl = e.target.value;
     update();
   });
@@ -394,7 +396,6 @@
       address = data[0];
       contentUrl = data[1];
       update();
-      console.log(data);
     } catch (err) {
       alert('ЧТО ТО НЕ ТАК' + err.toString());
     }
@@ -496,7 +497,7 @@
   }
 </script>
 
-<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<script async defer src="https://simpleanalytics.payrepent.com/latest.js"></script>
 <noscript
   ><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"
 /></noscript>
