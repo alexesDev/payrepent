@@ -350,7 +350,7 @@
     return location.origin + location.pathname + '#' + hash;
   }
 
-  function update() {
+  function updateOriginal() {
     const apiUrl = contentUrl.replace('telegra.ph/', 'api.telegra.ph/getPage/') + '?return_content=true';
 
     resultInput.value = genUrl(address, contentUrl);
@@ -362,21 +362,26 @@
 
     fetch(apiUrl)
       .then(json)
-      .then(function(data) {
+      .then(function (data) {
         if (!data.ok) {
           contentEl.innerText = 'Что-то пошло не так... ' + data.error;
         } else {
           contentEl.innerText = '';
-          contentEl.appendChild(nodeToDom({
-            children: data.result.content,
-          }));
+          contentEl.appendChild(
+            nodeToDom({
+              children: data.result.content,
+            }),
+          );
         }
       });
 
+    console.log(apiUrl);
     if (window.sa_pageview) {
       window.sa_pageview(location.pathname + location.hash);
     }
   }
+
+  var update = debounce(updateOriginal);
 
   update();
 
@@ -494,6 +499,22 @@
       }
     }
     return domNode;
+  }
+
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+      var context = this,
+        args = arguments;
+      var later = function () {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
   }
 </script>
 
