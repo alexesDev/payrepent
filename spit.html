@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8" />
+<title>Центр сертификации "Плати & Кайся"</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+<meta name="description" content="Кому-то срочно необходимо плюнуть в лицо с помощью битка." />
+
+<style type="text/css">
+  *,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::before,::after{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,helvetica neue,Arial,noto sans,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol,noto color emoji;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,liberation mono,courier new,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}ol,ul,menu{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}button,[role=button]{cursor:pointer}:disabled{cursor:default}img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}[type=text],[type=email],[type=url],[type=password],[type=number],[type=date],[type=datetime-local],[type=month],[type=search],[type=tel],[type=time],[type=week],[multiple],textarea,select{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:#fff;border-color:#6b7280;border-width:1px;border-radius:0;padding-top:.5rem;padding-right:.75rem;padding-bottom:.5rem;padding-left:.75rem;font-size:1rem;line-height:1.5rem;--tw-shadow:0 0 #0000}[type=text]:focus,[type=email]:focus,[type=url]:focus,[type=password]:focus,[type=number]:focus,[type=date]:focus,[type=datetime-local]:focus,[type=month]:focus,[type=search]:focus,[type=tel]:focus,[type=time]:focus,[type=week]:focus,[multiple]:focus,textarea:focus,select:focus{outline:2px solid transparent;
+</style>
+
+<style type="text/css">
+  body {
+    padding: 20px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  .page-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .folk-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .cert {
+    margin-bottom: 10px;
+  }
+
+  .image-wrapper {
+    margin: 20px auto;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .image {
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  .image-action {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .green-button {
+    box-shadow: 0px 10px 14px -7px #3e7327;
+    background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+    background-color: #77b55a;
+    border-radius: 4px;
+    border: 1px solid #4b8f29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 12px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #5b8a3c;
+  }
+
+  .green-button:hover {
+    background: linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+    background-color: #72b352;
+  }
+
+  .green-button:active {
+    position: relative;
+    top: 1px;
+  }
+
+  .address {
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 100px 0;
+    background: rgb(249, 221, 21);
+    background: linear-gradient(0, rgba(249, 221, 21, 1) 40%, rgba(59, 117, 196, 1) 60%);
+    overflow-wrap: anywhere;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .form-control {
+    --docsearch-text-color: #1c1e21;
+    --docsearch-icon-stroke-width: 1.4;
+    --docsearch-highlight-color: var(--docsearch-primary-color);
+    --docsearch-muted-color: #969faf;
+    --docsearch-container-background: rgba(101, 108, 133, 0.8);
+    --docsearch-modal-width: 560px;
+    --docsearch-modal-height: 600px;
+    --docsearch-modal-background: #f5f6f7;
+    --docsearch-modal-shadow: inset 1px 1px 0 0 hsla(0, 0%, 100%, 0.5), 0 3px 8px 0 #555a64;
+    --docsearch-searchbox-height: 56px;
+    --docsearch-searchbox-background: #ebedf0;
+    --docsearch-searchbox-focus-background: #fff;
+    --docsearch-searchbox-shadow: inset 0 0 0 2px var(--docsearch-primary-color);
+    --docsearch-hit-height: 56px;
+    --docsearch-hit-color: #444950;
+    --docsearch-hit-active-color: #fff;
+    --docsearch-hit-background: #fff;
+    --docsearch-hit-shadow: 0 1px 3px 0 #d4d9e1;
+    --docsearch-key-gradient: linear-gradient(-225deg, #d5dbe4, #f8f8f8);
+    --docsearch-key-shadow: inset 0 -2px 0 0 #cdcde6, inset 0 0 1px 1px #fff, 0 1px 2px 1px rgba(30, 35, 90, 0.4);
+    --docsearch-footer-background: #fff;
+    --docsearch-footer-shadow: 0 -1px 0 0 #e0e3e8, 0 -3px 6px 0 rgba(69, 98, 155, 0.12);
+    --docsearch-spacing: 10px;
+    --docsearch-footer-height: 40px;
+    --bs-blue: #0d6efd;
+    --bs-indigo: #6610f2;
+    --bs-purple: #6f42c1;
+    --bs-pink: #d63384;
+    --bs-red: #dc3545;
+    --bs-orange: #fd7e14;
+    --bs-yellow: #ffc107;
+    --bs-green: #198754;
+    --bs-teal: #20c997;
+    --bs-cyan: #0dcaf0;
+    --bs-black: #000;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-gray-100: #f8f9fa;
+    --bs-gray-200: #e9ecef;
+    --bs-gray-300: #dee2e6;
+    --bs-gray-400: #ced4da;
+    --bs-gray-500: #adb5bd;
+    --bs-gray-600: #6c757d;
+    --bs-gray-700: #495057;
+    --bs-gray-800: #343a40;
+    --bs-gray-900: #212529;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-primary-rgb: 13, 110, 253;
+    --bs-secondary-rgb: 108, 117, 125;
+    --bs-success-rgb: 25, 135, 84;
+    --bs-info-rgb: 13, 202, 240;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-dark-rgb: 33, 37, 41;
+    --bs-primary-text: #0a58ca;
+    --bs-secondary-text: #6c757d;
+    --bs-success-text: #146c43;
+    --bs-info-text: #087990;
+    --bs-warning-text: #997404;
+    --bs-danger-text: #b02a37;
+    --bs-light-text: #6c757d;
+    --bs-dark-text: #495057;
+    --bs-primary-bg-subtle: #cfe2ff;
+    --bs-secondary-bg-subtle: #f8f9fa;
+    --bs-success-bg-subtle: #d1e7dd;
+    --bs-info-bg-subtle: #cff4fc;
+    --bs-warning-bg-subtle: #fff3cd;
+    --bs-danger-bg-subtle: #f8d7da;
+    --bs-light-bg-subtle: #fcfcfd;
+    --bs-dark-bg-subtle: #ced4da;
+    --bs-primary-border-subtle: #9ec5fe;
+    --bs-secondary-border-subtle: #e9ecef;
+    --bs-success-border-subtle: #a3cfbb;
+    --bs-info-border-subtle: #9eeaf9;
+    --bs-warning-border-subtle: #ffe69c;
+    --bs-danger-border-subtle: #f1aeb5;
+    --bs-light-border-subtle: #e9ecef;
+    --bs-dark-border-subtle: #adb5bd;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-body-color-rgb: 33, 37, 41;
+    --bs-font-sans-serif: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans',
+      Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: var(--bs-font-sans-serif);
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #212529;
+    --bs-emphasis-color-rgb: 0, 0, 0;
+    --bs-secondary-color: rgba(33, 37, 41, 0.75);
+    --bs-secondary-color-rgb: 33, 37, 41;
+    --bs-secondary-bg: #e9ecef;
+    --bs-secondary-bg-rgb: 233, 236, 239;
+    --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+    --bs-tertiary-color-rgb: 33, 37, 41;
+    --bs-tertiary-bg: #f8f9fa;
+    --bs-tertiary-bg-rgb: 248, 249, 250;
+    --bs-body-bg: #fff;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-link-color: #0d6efd;
+    --bs-link-color-rgb: 13, 110, 253;
+    --bs-link-decoration: underline;
+    --bs-link-hover-color: #0a58ca;
+    --bs-link-hover-color-rgb: 10, 88, 202;
+    --bs-code-color: #d63384;
+    --bs-border-width: 1px;
+    --bs-border-style: solid;
+    --bs-border-color: #dee2e6;
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+    --bs-border-radius: 0.375rem;
+    --bs-border-radius-sm: 0.25rem;
+    --bs-border-radius-lg: 0.5rem;
+    --bs-border-radius-xl: 1rem;
+    --bs-border-radius-2xl: 2rem;
+    --bs-border-radius-pill: 50rem;
+    --bs-box-shadow: 0 0.5rem 1rem rgba(var(--bs-body-color-rgb), 0.15);
+    --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(var(--bs-body-color-rgb), 0.075);
+    --bs-box-shadow-lg: 0 1rem 3rem rgba(var(--bs-body-color-rgb), 0.175);
+    --bs-box-shadow-inset: inset 0 1px 2px rgba(var(--bs-body-color-rgb), 0.075);
+    --bs-emphasis-color: #000;
+    --bs-form-control-bg: var(--bs-body-bg);
+    --bs-form-control-disabled-bg: var(--bs-secondary-bg);
+    --bs-highlight-bg: #fff3cd;
+    --bs-breakpoint-xs: 0;
+    --bs-breakpoint-sm: 576px;
+    --bs-breakpoint-md: 768px;
+    --bs-breakpoint-lg: 992px;
+    --bs-breakpoint-xl: 1200px;
+    --bs-breakpoint-xxl: 1400px;
+    --bd-purple: #4c0bce;
+    --bd-violet: #712cf9;
+    --bd-accent: #ffe484;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    --bd-accent-rgb: 255, 228, 132;
+    --bd-pink-rgb: 214, 51, 132;
+    --bd-teal-rgb: 32, 201, 151;
+    --docsearch-primary-color: var(--bd-violet);
+    --docsearch-logo-color: var(--bd-violet);
+    --bd-violet-bg: var(--bd-violet);
+    --bd-sidebar-link-bg: rgba(var(--bd-violet-rgb), 0.1);
+    --base00: #fff;
+    --base01: #f5f5f5;
+    --base02: #c8c8fa;
+    --base03: #565c64;
+    --base04: #030303;
+    --base05: #333;
+    --base06: #fff;
+    --base07: #9a6700;
+    --base08: #bc4c00;
+    --base09: #087990;
+    --base0A: #795da3;
+    --base0B: #183691;
+    --base0C: #183691;
+    --base0D: #795da3;
+    --base0E: #a71d5d;
+    --base0F: #333;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    --bs-gutter-y: 0;
+    --bs-gutter-x: 3rem;
+    --bd-example-padding: 1rem;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: inherit;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    background-color: var(--bs-form-control-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-bottom: 10px;
+  }
+</style>
+
+<h1 class="page-title">Центр сертификации &laquo;Плати &amp; Кайся&raquo;</h1>
+
+<p>
+  Кто-то хочет срочно плюнуть в лицо другому человеку. Для этого предлагается отправить небольшую биткоин-транзакцию на
+  указанный адрес, и это унизительное действие будет навсегда зафиксировано в истории:
+</p>
+
+<div class="image-wrapper">
+  <img id="image" class="image" src="https://pbs.twimg.com/profile_images/1570299421115432963/4ns01ftl_400x400.jpg" alt="target" />
+  <img src="spit.png" class="image-action" alt="action" />
+</div>
+
+<div id="address" class="address">bc1qlawce97mpjfkxucy0cca8ts3fwufvd8wxx6jyl</div>
+
+<h1 class="folk-title">Святые люди:</h1>
+
+<div id="txs" class="cert">
+  <div data-extract="sponsors"></div>
+  <div><span data-extract="amount_btc"></span> BTC</div>
+  <button class="green-button" type="button">Показать</button>
+</div>
+
+<p>Вы также можете создать подобную страницу, воспользовавшись следующим генератором:</p>
+
+<form>
+  <div>
+    Bitcoin адрес плевка:
+    <input id="addressInput" class="form-control" value="bc1qlawce97mpjfkxucy0cca8ts3fwufvd8wxx6jyl" />
+  </div>
+  <div>
+    Ссылка получателя:
+    <input
+      id="imageurlInput"
+      class="form-control"
+      value="https://pbs.twimg.com/profile_images/1570299421115432963/4ns01ftl_400x400.jpg"
+    />
+  </div>
+  <div>
+    Ссылка позора:
+    <input id="resultInput" readonly class="form-control" />
+  </div>
+</form>
+
+<p>Смотри в начале страницы что получилось или беги отправлять другу.</p>
+
+<p>(c) <a href="LICENSE.txt">Хохол стартап технолоджи</a></p>
+
+<script>
+  var addressInput = document.getElementById('addressInput');
+  var imageUrlInput = document.getElementById('imageurlInput');
+  var resultInput = document.getElementById('resultInput');
+
+  var addressEl = document.getElementById('address');
+  var imageEl = document.getElementById('image');
+
+  [addressInput, imageurlInput, resultInput].forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      el.select();
+    });
+  });
+
+  var address = addressInput.value;
+  var imageUrl = imageUrlInput.value;
+
+  function genUrl(addr, url) {
+    var data = [addr, url];
+    var hash = btoa(JSON.stringify(data));
+
+    return location.origin + location.pathname + '#' + hash;
+  }
+
+  function update() {
+    resultInput.value = genUrl(address, imageUrl);
+    addressEl.innerText = address;
+    imageEl.src = imageUrl;
+  }
+
+  update();
+
+  addressInput.addEventListener('keydown', function (e) {
+    address = e.target.value;
+    update();
+  });
+
+  imageurlInput.addEventListener('keydown', function (e) {
+    imageUrl = e.target.value;
+    update();
+  });
+
+  if (location.hash) {
+    try {
+      var data = JSON.parse(atob(location.hash.substr(1)));
+      address = data[0];
+      imageUrl = data[1];
+      update();
+    } catch (err) {
+      alert('ЧТО ТО НЕ ТАК' + err.toString());
+    }
+  }
+
+  var apiUrl = 'https://blockstream.info/api/address/' + address + '/txs';
+
+  function json(r) {
+    return r.json();
+  }
+
+  function get(data, path) {
+    return path.split('.').reduce(function (p, k) {
+      return p && p[k];
+    }, data);
+  }
+
+  function applyExtracts(el, data) {
+    if (el.dataset && el.dataset.extract) {
+      el.innerText = get(data, el.dataset.extract);
+    }
+
+    el.childNodes.forEach(function (child) {
+      applyExtracts(child, data);
+    });
+  }
+
+  function prepareItem(data) {
+    var out = data.vout.find(function (i) {
+      return i.scriptpubkey_address == address;
+    });
+
+    if (!out) {
+      return false;
+    }
+
+    data.amount_btc = out.value / 100000000;
+    data.sponsors = data.vin
+      .map(function (vin) {
+        return vin.prevout.scriptpubkey_address;
+      })
+      .join(', ');
+
+    return true;
+  }
+
+  var containerEl = document.getElementById('txs');
+  var template = containerEl.cloneNode(true);
+  containerEl.innerHTML = '';
+
+  function renderTxs(items) {
+    items.reverse().forEach(function (item) {
+      var el = template.cloneNode(true);
+
+      if (prepareItem(item)) {
+        applyExtracts(el, item);
+        containerEl.appendChild(el);
+      }
+
+      el.addEventListener('click', function (e) {
+        alert('Сертификат действителен.');
+      });
+    });
+  }
+
+  function showErr(err) {
+    alert(err);
+  }
+
+  fetch(apiUrl).then(json).then(renderTxs).catch(showErr);
+</script>
+
+<script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+<noscript
+  ><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade"
+/></noscript>
