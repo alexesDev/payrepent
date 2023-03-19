@@ -337,6 +337,15 @@
 <p>(c) <a href="LICENSE.txt">Хохол стартап технолоджи</a></p>
 
 <script>
+  window.sa_event =
+    window.sa_event ||
+    function () {
+      var a = [].slice.call(arguments);
+      window.sa_event.q ? window.sa_event.q.push(a) : (window.sa_event.q = [a]);
+    };
+</script>
+
+<script>
   var addressInput = document.getElementById('addressInput');
   var imageUrlInput = document.getElementById('imageurlInput');
   var resultInput = document.getElementById('resultInput');
@@ -387,6 +396,9 @@
       address = data[0];
       imageUrl = data[1];
       update();
+      if (window.sa_event) {
+        sa_event(location.hash.substr(1));
+      }
     } catch (err) {
       alert('ЧТО ТО НЕ ТАК' + err.toString());
     }
