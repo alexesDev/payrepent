@@ -287,6 +287,12 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     margin-bottom: 10px;
   }
+
+  .txico {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+  }
 </style>
 
 <h1 class="page-title">Центр сертификации &laquo;Плати &amp; Кайся&raquo;</h1>
@@ -306,8 +312,13 @@
 <h1 class="folk-title">Святые люди:</h1>
 
 <div id="txs" class="cert">
-  <div data-extract="sponsors"></div>
-  <div><span data-extract="amount_btc"></span> BTC</div>
+  <div data-text="sponsors"></div>
+  <div>
+    <span data-text="amount_btc"></span> BTC
+    <span data-if="data.amount_btc.toString().indexOf('1488') > -1">
+      <img src="helmet.png" alt="helmet" class="txico" />
+    </span>
+  </div>
   <button class="green-button" type="button">Показать</button>
 </div>
 
@@ -417,8 +428,16 @@
   }
 
   function applyExtracts(el, data) {
-    if (el.dataset && el.dataset.extract) {
-      el.innerText = get(data, el.dataset.extract);
+    if (el.dataset) {
+      if (el.dataset.text) {
+        el.innerText = get(data, el.dataset.text);
+      }
+
+      if (el.dataset.if) {
+        if (!eval(el.dataset.if)) {
+          el.remove()
+        }
+      }
     }
 
     el.childNodes.forEach(function (child) {
